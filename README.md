@@ -64,6 +64,8 @@ axell-ai-contest-2025-1st-place-solution/
 └── requirements.txt     # 依存関係
 ```
 
+<br/>
+<br/>
 
 ## 🚀　Usage
 
@@ -94,6 +96,8 @@ pip install -r requirements.txt
 
 4. データセットの準備
 
+以下のようなディレクトリを作成してください。
+
 ```
 data/
 └── raw/
@@ -114,6 +118,10 @@ data/
 ```bash
 jupyter nbconvert --execute generate.ipynb
 ```
+
+<br/>
+
+以下のようなディレクトリが作成されます。
 
 ```
 data/
@@ -136,6 +144,10 @@ data/
 jupyter nbconvert --execute segment.ipynb
 ```
 
+<br/>
+
+以下のようなディレクトリが作成されます。
+
 ```
 data/
 └── segmented/
@@ -153,6 +165,10 @@ data/
 ```bash
 jupyter nbconvert --execute prepare.ipynb
 ```
+
+<br/>
+
+以下のようなディレクトリが作成されます。
 
 ```
 data/
@@ -178,7 +194,7 @@ data/
 
 8. train.ipynbの実行
 
-モデルのファインチューニングを行います
+モデルのファインチューニングを行います。
 
 ```bash
 jupyter nbconvert --execute train.ipynb
