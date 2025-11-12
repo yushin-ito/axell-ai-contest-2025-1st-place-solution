@@ -1,0 +1,8 @@
+numpy==2.2.6
+onnx==1.17.0
+onnxruntime-gpu==1.22.0
+onnxslim==0.1.62
+tensorrt==10.13.0.35
+torch==2.7.1
+torchvision==0.22.1
+ultralytics==8.3.174
