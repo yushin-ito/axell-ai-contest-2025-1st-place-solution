@@ -67,31 +67,32 @@ axell-ai-contest-2025-1st-place-solution/
 
 ## 🚀　Usage
 
-**1. 仮想環境の構築**
-
-以下のコマンドを実行してください。
+1. リポジトリをクローンする
 
 ```bash
-python -m venv .venv 
+git clone https://github.com/yushin-ito/axell-ai-contest-2025-1st-place-solution.git
+```
+
+2. リポジトリに移動する
+
+```bash
+cd axell-ai-contest-2025-1st-place-solution
+```
+
+3. 仮装環境を作成する
+
+```bash
+python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-<br/>
-
-**2. 依存関係のインストール**
-
-以下のコマンドを実行してください。
+3. 依存関係のインストール
 
 ```bash
 pip install -r requirements.txt
 ```
 
-<br/>
-
-**3. データセットの配置**
-
-- `data/raw`に提供されたデータセットを展開してください。
-- 以下のようなディレクトリになっていることを確認してください。
+4. データセットの準備
 
 ```
 data/
@@ -106,14 +107,13 @@ data/
 
 <br/>
 
-**4. generate.ipynbの実行**
+5. generate.ipynbの実行
 
 合成によるデータ拡張に使用する背景の画像の生成を行います。
 
-- すべてのセルを上から順番に実行してください。
-- 上から2つ目のセルの`<HF_TOKEN>`を[Hugging Face](https://huggingface.co)のアクセストークンに置き換えてください。
-- 事前に[Stable Diffusion 3.5 Large](https://huggingface.co/stabilityai/stable-diffusion-3.5-large)の利用規約に同意してください。
-- 以下のようなディレクトリになっていることを確認してください。
+```bash
+jupyter nbconvert --execute generate.ipynb
+```
 
 ```
 data/
@@ -123,16 +123,18 @@ data/
     └── ...
 ```
 
-保存されるデータは、ご連絡いただければ提供いたします。
+> [!CAUTION]
+> 上から2つ目のセルの`<HF_TOKEN>`を[Hugging Face](https://huggingface.co)のアクセストークンに置き換えてください。
 
 <br/>
 
-**5. segment.ipynbの実行**
+6. segment.ipynbの実行
 
 合成によるデータ拡張に使用するための物体の画像のセグメンテーションを行います。
 
-- すべてのセルを上から順番に実行してください。
-- 以下のようなディレクトリになっていることを確認してください。
+```bash
+jupyter nbconvert --execute segment.ipynb
+```
 
 ```
 data/
@@ -142,16 +144,15 @@ data/
     └── ...
 ```
 
-保存されるデータは、ご連絡いただければ提供いたします。
-
 <br/>
 
-**6. prepare.ipynbの実行**
+7. prepare.ipynbの実行
 
 学習に使用するデータセットの作成を行います。
 
-- すべてのセルを上から順番に実行してください。
-- 以下のようなディレクトリになっていることを確認してください。
+```bash
+jupyter nbconvert --execute prepare.ipynb
+```
 
 ```
 data/
@@ -173,25 +174,25 @@ data/
     └── data.yaml
 ```
 
-保存されるデータは、ご連絡いただければ提供いたします。
+<br/>
+
+8. train.ipynbの実行
+
+モデルのファインチューニングを行います
+
+```bash
+jupyter nbconvert --execute train.ipynb
+```
 
 <br/>
 
-**7. train.ipynbの実行**
-
-事前学習重みを用いてファインチューニングを行います
-
-- すべてのセルを上から順番に実行してください。
-- 上から4つ目のセルの`name`の値を適宜変更してください。
-
-<br/>
-
-**8. optimize.ipynbの実行**
+9. optimize.ipynbの実行
 
 不要な情報を削除することでモデルの最適化を行います。
 
-- すべてのセルを上から順番に実行してください。
-- 上から3つ目のセルの`model_path`の値を適宜変更してください。
+```bash
+jupyter nbconvert --execute optimize.ipynb
+```
 
 <br/>
 <br/>
@@ -210,12 +211,16 @@ cp runs/exp/weights/best.pt submit/model/best.pt
 zip -r submit.zip submit
 ```
 
+<br/>
+<br/>
+
 ## 🤝 Contributer
 
 <a href="https://github.com/yushin-ito">
   <img  src="https://avatars.githubusercontent.com/u/75526539?s=48&v=4" width="64px">
 </a>
 
+<br/>
 <br/>
 
 ## 📜 LICENSE
